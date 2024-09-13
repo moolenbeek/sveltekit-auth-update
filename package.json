@@ -32,6 +32,7 @@
 	"type": "module",
 	"dependencies": {
 		"@picocss/pico": "^2.0.6",
+		"@prisma/client": "^5.7.0",
 		"lucia": "^3.2.0",
 		"oslo": "^1.2.1"
 	}
