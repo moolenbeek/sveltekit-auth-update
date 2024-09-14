@@ -1,5 +1,4 @@
 import { createUser } from "$lib/server/database/router/users";
-
 import { fail, redirect } from "@sveltejs/kit";
 import type { Actions } from "./$types";
 
