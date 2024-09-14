@@ -1,8 +1,5 @@
 node_modules
 
-# Prisma
-prisma/dev.db
-
 # Output
 .output
 .vercel
