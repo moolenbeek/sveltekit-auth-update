@@ -10,12 +10,13 @@
 		"dev": "vite dev",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
-		"preview": "vite preview"
+		"generate": "drizzle-kit generate:pg --config drizzle.config.ts",
+		"migrate": "drizzle-kit push:pg --config drizzle.config.ts",
+		"studio": "drizzle-kit studio --config drizzle.config.ts"
 	},
 	"dependencies": {
 		"@lucia-auth/adapter-drizzle": "^1.0.2",
 		"@picocss/pico": "^2.0.6",
-		"drizzle-orm": "^0.29.3",
 		"lucia": "^3.2.0",
 		"oslo": "^1.2.1",
 		"pg": "^8.11.3"
@@ -26,7 +27,9 @@
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"@types/eslint": "^9.6.0",
 		"@types/pg": "^8.11.1",
+		"dotenv": "^16.4.5",
 		"drizzle-kit": "^0.20.14",
+		"drizzle-orm": "^0.29.3",
 		"eslint": "^9.0.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.36.0",
