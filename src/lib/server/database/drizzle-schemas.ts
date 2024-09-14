@@ -5,15 +5,7 @@ export const userTable = pgTable("users", {
 	email: text("email").notNull().unique(),
 	name: text("name").notNull(),
 	password: text("password"),
-	token: text("token").unique(),
-	createdAt: timestamp("created_at", {
-		withTimezone: true,
-		mode: "date"
-	}).notNull(),
-	updatedAt: timestamp("updated_at", {
-		withTimezone: true,
-		mode: "date"
-	}).notNull()
+	token: text("token").unique()
 });
 
 export const sessionTable = pgTable("sessions", {
