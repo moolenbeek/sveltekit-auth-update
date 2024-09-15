@@ -1,14 +1,17 @@
 import { createUser } from "$lib/server/database/router/users";
 import { fail, redirect } from "@sveltejs/kit";
 import type { Actions } from "./$types";
+import { Argon2id } from "oslo/password";
+// import { lucia } from '$lib/server/lucia';
 
 export const actions: Actions = {
 	default: async function ({ request }) {
-		const { name, email, password } = Object.fromEntries(await request.formData()) as Record<
+		let { name, email, password } = Object.fromEntries(await request.formData()) as Record<
 			string,
 			string
 		>;
 
+		password = await new Argon2id().hash(password);
 		const id = crypto.randomUUID();
 		const token = crypto.randomUUID();
 		try {
@@ -20,5 +23,3 @@ export const actions: Actions = {
 		throw redirect(302, "/login");
 	}
 };
-
-// create user sessions
